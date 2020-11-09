@@ -13,6 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/','MobilController@index');
+Route::get('/rental','PenyewaanController@index');
+Route::post('/rental/add','PenyewaanController@store');
+Route::post('/mobil/create','MobilController@store');
+Route::get('/mobil/{id}/edit','MobilController@edit');
+Route::post('/mobil/{id}/update','MobilController@update');
+Route::get('/mobil/{id}/delete','MobilController@destroy');
+
